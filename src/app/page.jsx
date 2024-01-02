@@ -1,17 +1,23 @@
+'use client'
 import React from 'react'
 import { Button } from "@/ui/button/Button";
 import { Header } from "@/ui/header/Header"
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const { push } = useRouter();
+  
+
   return (
     <main>
-      <Header />
       <div className="flex min-h-[87vh] flex-col items-center justify-center p-10">
         <div>
           <h1 className='text-slate-950 text-[40px] text-center font-bold'>Diseñador de Riders</h1>
           <span className='text-gray-400'>Genera el diseño de tu planta de sonido fácil y rápido</span>
           <div className='flex justify-center mt-5'>
-            <Button link={''}>
+            <Button onClick={() => {
+              push('/login')
+            }}>
               Comenzar
             </Button>
           </div>
